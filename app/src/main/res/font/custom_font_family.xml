@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <font
+        android:font="@font/kohi_baeum"
+        android:fontStyle="normal"
+        android:fontWeight="300"
+        app:font="@font/kohi_baeum"
+        app:fontStyle="normal"
+        app:fontWeight="800" />
+
+    <font
+        android:font="@font/kohi_nanum_bold"
+        android:fontStyle="normal"
+        android:fontWeight="700"
+        app:font="@font/kohi_nanum_bold"
+        app:fontStyle="normal"
+        app:fontWeight="1000" />
+
+    <font
+        android:font="@font/kohi_nanum_light"
+        android:fontStyle="normal"
+        android:fontWeight="700"
+        app:font="@font/kohi_nanum_light"
+        app:fontStyle="normal"
+        app:fontWeight="1000" />
+</font-family>

@@ -6,80 +6,112 @@
     <data>
         <import type="android.view.View"/>
         <variable
-            name="test"
-            type="com.february.whoareyou.view.main.MainActivity" />
+            name="viewModel"
+            type="com.february.whoareyou.view.main.MainViewModel" />
     </data>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".view.main.MainActivity"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textSize="30sp"
-            android:layout_margin="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="누구세요" />
+        android:orientation="vertical"
+        android:background="@color/AppColor1"
+        android:paddingTop="20dp">
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/rectangle_border"
             android:orientation="vertical"
-            android:layout_margin="10dp">
+            android:padding="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/Text.TitleStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:text="@string/rule"
+                android:textSize="25sp" />
 
             <TextView
                 android:id="@+id/textView1"
-                android:textSize="20sp"
+                style="@style/Text.TitleStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1. 동시에 여러 채팅방에 들어갈 수 없습니다." />
+                android:layout_marginBottom="10dp"
+                android:text="@string/rule1"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textView2"
-                android:textSize="20sp"
+                style="@style/Text.TitleStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="2. 사용자는 일회용 닉네임을 사용합니다." />
+                android:layout_marginBottom="10dp"
+                android:text="@string/rule2"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textView3"
-                android:textSize="20sp"
+                style="@style/Text.TitleStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="3. 동시에 매칭을 돌리고 있는 무작위 사용자와 만나게 됩니다." />
+                android:layout_marginBottom="10dp"
+                android:text="@string/rule3"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textView4"
-                android:textSize="20sp"
+                style="@style/Text.TitleStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="4. 즐거운 이용 바랍니다." />
+                android:layout_marginBottom="10dp"
+                android:text="@string/rule4"
+                android:textSize="20sp" />
         </LinearLayout>
 
         <EditText
             android:id="@+id/search_editText"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="60dp"
+            android:background="@drawable/rectangle_text"
             android:ems="10"
-            android:hint="닉네임을 입력해주세요."
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="10dp"
-            android:inputType="textPersonName" />
+            android:hint="@string/enterNickname"
+            android:layout_margin="20dp"
+            android:inputType="textPersonName"
+            android:paddingStart="10dp"
+            android:singleLine="true"
+            android:text="@={viewModel.nickName}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
         <Button
             android:id="@+id/button"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="10dp"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:textColor="@color/white"
+            style="@style/Text.TitleStyle"
             android:backgroundTint="@color/AppColor2"
+            android:onClick="@{(v) -> viewModel.signIn()}"
+            android:text="@string/start"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:textColor="@color/white"
             android:textSize="20sp"
-            android:text="매칭하기" />
-    </LinearLayout>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/search_editText" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

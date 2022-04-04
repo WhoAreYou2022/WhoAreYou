@@ -5,42 +5,55 @@
     <data>
         <import type="android.view.View"/>
         <variable
-            name="test"
-            type="com.february.whoareyou.view.chat.ChatActivity" />
+            name="viewModel"
+            type="com.february.whoareyou.view.chat.RandomChatViewModel" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".view.chat.ChatActivity">
+        tools:context=".view.chat.RandomChatActivity">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/conversation"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:background="@color/AppColor1"/>
 
         <LinearLayout
+            android:id="@+id/input_message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
 
             <EditText
                 android:id="@+id/editTextTextPersonName"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_height="50dp"
                 android:ems="10"
+                android:paddingStart="5dp"
                 android:inputType="textPersonName"
-                android:text="Name" />
+                android:maxLines="1"
+                android:background="@null"
+                android:text="@={viewModel.inputMessage}" />
 
             <ImageView
                 android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="10dp"
                 android:background="@color/AppColor2"
-                android:text="전송"/>
+                android:src="@drawable/send"
+                style="@style/Text.TitleStyle"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:onClick="@{(v) -> viewModel.sendMessage()}"
+                app:tint="@color/white" />
         </LinearLayout>
     </LinearLayout>
 </layout>

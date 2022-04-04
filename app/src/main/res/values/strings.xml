@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">WhoAreYou</string>
+
+    <string name="rule">규칙</string>
+    <string name="rule1">1. 사용자는 일회용 닉네임을 사용합니다.</string>
+    <string name="rule2">2. 동시에 다수의 채팅방에 입장 할 수 없습니다.</string>
+    <string name="rule3">3. 동시에 매칭을 돌리고 있는 무작위 사용자와 만나게 됩니다.</string>
+    <string name="rule4">4. 규칙은 추가 또는 변경 될 수 있습니다.</string>
+    <string name="start">시작하기</string>
+    <string name="enterNickname">닉네임을 입력해주세요.</string>
+
+    <string name="send">전송</string>
+    <string name="setting">설정</string>
+    <string name="signOut">나가기</string>
 </resources>
